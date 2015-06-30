@@ -1,13 +1,18 @@
 <h1>Listing messages</h1>
 
+<%= link_to 'New message', new_message_path %>
+
 <table>
   <tr>
     <th>Messages</th>
+    <th colspan="2"></th>
   </tr>
 
   <% @messages.each do |message| %>
     <tr>
       <td><%= message.text %></td>
+      <td><%= link_to 'Show', message_path(message) %></td>
+      <td><%= link_to 'Edit', edit_message_path(message) %></td>
     </tr>
   <% end %>
 </table>

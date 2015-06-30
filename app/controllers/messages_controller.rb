@@ -10,6 +10,10 @@ class MessagesController < ApplicationController
   def new
   end
 
+  def edit
+    @message = Message.find(params[:id])
+  end
+
   def create
     @message = Message.new(message_params)
 
@@ -17,6 +21,16 @@ class MessagesController < ApplicationController
       redirect_to @message
     else
       render 'new'
+    end
+  end
+
+  def update
+    @message = Message.find(params[:id])
+
+    if @message.update(message_params)
+      redirect_to @message
+    else
+      render 'edit'
     end
   end
 
