@@ -1,32 +1,5 @@
 <h1>Editing message</h1>
 
-<%= form_for :message, url: message_path(@message), method: :patch do |f| %>
-
-  <% if defined?(@message) %>
-    <% if @message.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@message.errors.count, "error") %> prohibited
-          this message from being saved:
-        </h2>
-        <ul>
-          <% @message.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  <% end %>
-
-  <p>
-  <%= f.label :text %><br>
-  <%= f.text_area :text %>
-  </p>
-
-  <p>
-  <%= f.submit %>
-  </p>
-
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', messages_path %>
