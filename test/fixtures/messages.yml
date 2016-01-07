@@ -5,3 +5,8 @@ one:
 
 two:
   text: Did you just call me a dog?
+
+<% 10.times do |n| %>
+message_<%= n %>:
+  text: Message <%= "message#{n}" %>
+<% end %>
