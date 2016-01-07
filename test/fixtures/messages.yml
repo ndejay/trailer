@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  text: MyText
+  text: I am the king of the world.
 
 two:
-  text: MyText
+  text: Did you just call me a dog?
