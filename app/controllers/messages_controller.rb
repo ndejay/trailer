@@ -16,13 +16,9 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-
-    if @message.save # validation is successful
-      redirect_to @message
-    else
-      render 'new'
-    end
+    @user = User.find(params[:user_id])
+    @message = @user.messages.create(message_params)
+    redirect_to user_path(@user)
   end
 
   def update

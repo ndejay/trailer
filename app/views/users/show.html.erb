@@ -2,11 +2,30 @@
   <strong>name:</strong>
   <%= @user.name %>
 </p>
- 
+
 <p>
   <strong>password:</strong>
   <%= @user.password %>
 </p>
+
+<h2>Messages</h2>
+<% @user.messages.each do |message| %>
+  <p>
+    <strong>Text:</strong>
+    <%= message.text %>
+  </p>
+<% end %>
+
+<h2>Add a message:</h2>
+<%= form_for([@user, @user.messages.build]) do |f| %>
+  <p>
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
