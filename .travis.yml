@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+rvm:
+  - "1.9.3"
+  - "2.2.0"
+  - "2.3.0"
+before_script:
+  - bundle exec rake db:migrate RAILS_ENV=test
+script:
+  - bundle exec rake test
+notifications:
+  email: false
